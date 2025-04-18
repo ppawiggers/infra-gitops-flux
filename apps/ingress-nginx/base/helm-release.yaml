@@ -12,3 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: ingress-nginx
+  values:
+    controller:
+      service:
+        type: ClusterIP
