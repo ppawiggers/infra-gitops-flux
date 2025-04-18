@@ -8,11 +8,11 @@ if [ -z "$GITHUB_TOKEN" ]; then
   exit 1
 fi
 
-CLUSTER_NAME="$1"
+CLUSTER="$1"
 
 flux bootstrap github \
   --owner=ppawiggers \
   --repository=infra-gitops-flux \
   --branch=main \
-  --path="clusters/${CLUSTER_NAME}" \
+  --path="clusters/$CLUSTER" \
   --personal=true
