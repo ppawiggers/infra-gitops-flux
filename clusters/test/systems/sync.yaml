@@ -4,7 +4,9 @@ metadata:
   name: systems
   namespace: flux-system
 spec:
+  interval: 10m0s
+  path: ./systems/overlays/test
+  prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: systems/overlays/test

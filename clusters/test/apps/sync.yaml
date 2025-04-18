@@ -2,21 +2,25 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps-ingress-nginx
+  name: app-ingress-nginx
   namespace: flux-system
 spec:
+  interval: 10m0s
+  path: ./apps/ingress-nginx/overlays/test
+  prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: apps/ingress-nginx/overlays/test
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps-rbac
+  name: app-rbac
   namespace: flux-system
 spec:
+  interval: 10m0s
+  path: ./apps/rbac/overlays/test
+  prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: apps/rbac/overlays/test
