@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: developer-group
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: developer
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: dcd04b4b-6d5f-4d28-8123-30c3465206c6
